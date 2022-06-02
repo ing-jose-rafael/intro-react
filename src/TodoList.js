@@ -3,7 +3,7 @@ import './TodoList.css'
 
 function TodoList(props){
     return (
-        <section>
+        <section className="items-list">
             <ul>
                 {props.children}
             </ul>

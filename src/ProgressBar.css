@@ -1,0 +1,32 @@
+div.progress-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  
+  div.progress-container progress {
+    height: 17px;
+    border: 1px solid #282828;
+    padding: 4px;
+    margin: 15px 20px 5px 20px;
+    border-radius: 100px;
+    width: 100%;
+  }
+  
+  div.progress-container progress::-webkit-progress-bar {
+    background-color: transparent;
+  }
+  
+  div.progress-container progress::-webkit-progress-value {
+    background-image: -webkit-linear-gradient(left, #57fac4f9,#ac7af8de);
+    border-radius: 100px;
+    -webkit-transition: width 0.8s ease-in-out;
+    transition: width 0.8s ease-in-out;
+  }
+  
+  p.progress-number, p.progress-default {
+    font-size: 1.7rem;
+    color: #282828c2;
+    font-weight: 600;
+    margin: 5px 20px 15px 25px;
+  }

@@ -7,6 +7,9 @@ import { TodoSearch } from './TodoSearch';
 import { CreateTodoButton } from './CreateTodoButton';
 import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
+import { Header } from "./Header";
+import { ProgressBar } from "./ProgressBar";
+import { NewTask } from "./NewTask";
 
 const todos = [
   {text:'Cortar el cespe', completed:true},
@@ -18,9 +21,12 @@ function App() {
   return (
     
     <React.Fragment>
-      {<TodoCounter/>}
+      {<Header/>}
+      {<ProgressBar/>}
+      {<NewTask/>}
+      {/* {<TodoCounter/>} */}
       
-      {<TodoSearch/>}
+      {/* {<TodoSearch/>} */}
       
       
       {<TodoList>
