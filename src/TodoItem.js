@@ -5,6 +5,14 @@ import imgUncheck from './img/uncheck.svg';
 import imgTrash from './img/trash.svg';
 
 function TodoItem(params) {
+    const onComplete = ()=>{
+        alert('Ya completaste la tarea '+params.text);
+    }
+    
+    const onDelete = ()=>{
+        alert('Borraste la tarea '+params.text);
+    }
+
     return (
         
         // <li className="Todo-Item">
@@ -18,7 +26,8 @@ function TodoItem(params) {
         // </li>
         <li className={`items ${params.completed && "completed"}`}>
             <img
-                onClick={params.onComplete}
+                // onClick={params.onComplete}
+                onClick={onComplete}
                 src={
                 params.completed
                     ? imgChecked
@@ -28,7 +37,7 @@ function TodoItem(params) {
             />
             <div className="item-info">
                 <p>{params.text}</p>
-                <img src={imgTrash} alt="trash" />
+                <img src={imgTrash} alt="trash" onClick={onDelete}/>
                 {/* <img onClick={params.onDelete} src="/src/img/trash.svg" alt="trash" /> */}
             </div>
         </li>
