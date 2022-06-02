@@ -9,10 +9,10 @@ import { TodoList } from './TodoList';
 import { TodoItem } from './TodoItem';
 
 const todos = [
-  {text:'Cortar el cespe', completed:false},
+  {text:'Cortar el cespe', completed:true},
   {text:'Bañar el bebe', completed:false},
   {text:'Cambiar Dico Duro', completed:false},
-  {text:'Dormir', completed:false},
+  {text:'Dormir', completed:true},
 ]
 function App() {
   return (
@@ -25,7 +25,10 @@ function App() {
       
       {<TodoList>
         {todos.map(todo => (
-          <TodoItem key={todo.text} text={todo.text}/>
+          <TodoItem 
+            key={todo.text} 
+            text={todo.text}
+            completed={todo.completed}/>
         ))}
       </TodoList>}
       
