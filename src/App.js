@@ -2,6 +2,8 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from "react";
+import { TodoCounter } from "./TodoCounter";
+import { TodoSearch } from './TodoSearch';
 
 const todos = [
   {text:'Cortar el cespe', completed:false},
@@ -12,11 +14,10 @@ function App() {
   return (
     
     <React.Fragment>
-      {/* {<TodoCounter/>} */}
-      <h2>Has completado 2 de 3 TODOs</h2>
+      {<TodoCounter/>}
       
-      {/* {<TodoSearch/>} */}
-      <input placeholder="Tarea"/>
+      {<TodoSearch/>}
+      
       
       {/* {<TodoList>
         {todos.map(todo => (
