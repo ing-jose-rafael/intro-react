@@ -1,9 +1,9 @@
 import React from 'react';
 import './ProgressBar.css';
-const ProgressBar = () => {
+const ProgressBar = (params) => {
     // const {completedToDos, totalToDos, toDos} = React.useContext(ToDoContext);
     // const percentage = parseInt((completedToDos/totalToDos)*100);
-    const percentage = 50;
+    const percentage = params.porcentaje;
     return (
       <>
         <div className='progress-container'>

@@ -14,15 +14,18 @@ import { NewTask } from "./NewTask";
 const todos = [
   {text:'Cortar el cespe', completed:true},
   {text:'Bañar el bebe', completed:false},
-  {text:'Cambiar Dico Duro', completed:false},
+  {text:'Cambiar Dico Duro', completed:true},
   {text:'Dormir', completed:true},
 ]
 function App() {
+  const completed = todos.filter(todo => todo.completed).length;
+  const totalTodo = todos.length;
+  const porcent = (completed*100)/totalTodo;
   return (
     
     <React.Fragment>
       {<Header/>}
-      {<ProgressBar/>}
+      {<ProgressBar porcentaje={porcent}/>}
       {<NewTask/>}
       {/* {<TodoCounter/>} */}
       
