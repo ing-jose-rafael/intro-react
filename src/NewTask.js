@@ -3,18 +3,18 @@ import './NewTask.css';
 import imgPlus from './img/plus.svg'
 import imgLupa from './img/lupa.svg'
 
-const NewTask = (props) => {
+const NewTask = ({searchValue,setSearchValue}) => {
 
-  const [searchValue,setSearchValue]= React.useState('');
+  // const [searchValue,setSearchValue]= React.useState('');
 
   const onSearchValueChange = (event) => {
     console.log(event.target.value);
     setSearchValue(event.target.value)
   }
-  return [
+  return (
     <form
     className='form-container'
-    onSubmit={props.submit}
+    // onSubmit={props.submit}
     >
       <input
         // {...props.register} 
@@ -28,7 +28,7 @@ const NewTask = (props) => {
       <button type="submit" className='add-btn'><img src={imgLupa} alt="search" /></button>
         <p>{searchValue}</p>
     </form>
-  ];
+  );
 };
 
 export { NewTask };

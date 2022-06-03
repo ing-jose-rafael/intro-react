@@ -21,12 +21,18 @@ function App() {
   const completed = todos.filter(todo => todo.completed).length;
   const totalTodo = todos.length;
   const porcent = (completed*100)/totalTodo;
+
+  const [searchValue,setSearchValue]=React.useState('');
+
   return (
     
     <React.Fragment>
       {<Header/>}
       {<ProgressBar porcentaje={porcent}/>}
-      {<NewTask/>}
+      {<NewTask 
+        searchValue={searchValue}
+        setSearchValue={setSearchValue}
+      />}
       {/* {<TodoCounter/>} */}
       
       {/* {<TodoSearch/>} */}
