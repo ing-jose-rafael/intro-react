@@ -14,7 +14,10 @@ header {
     font-size: 4.1rem;
     color: #282828;
   }
-  
+  header span {
+    /* color: #1d00d741; */
+    color: #dbaaf9e7;
+  }
   header div.info-container {
     margin: 0;
     display: -webkit-box;
