@@ -5,17 +5,17 @@ form.form-container {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin: 0 20px 15px 20px;
+    margin: 18px 20px 28px 20px;
     background: #1e00d726;
     -webkit-box-shadow: 0px 0px 15px #00000025;
             box-shadow: 0px 0px 15px #00000025;
-    height: 45px;
+    height: 52px;
     border-radius: 100px;
   }
   
   form.form-container input.add-input {
     color: #282828;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     border-width: 0;
     width: 100%;
     background: none;

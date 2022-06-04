@@ -26,7 +26,7 @@ const NewTask = ({searchValue,setSearchValue}) => {
         type="text"
         placeholder='Add a new task...' />
       <button type="submit" className='add-btn'><img src={imgLupa} alt="search" /></button>
-        <p>{searchValue}</p>
+        {/* <p>{searchValue}</p> */}
     </form>
   );
 };
