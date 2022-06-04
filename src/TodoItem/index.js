@@ -1,8 +1,8 @@
 import React from "react";
 import './TodoItem.css';
-import imgChecked from './img/checked.svg';
-import imgUncheck from './img/uncheck.svg';
-import imgTrash from './img/trash.svg';
+import imgChecked from '../img/checked.svg';
+import imgUncheck from '../img/uncheck.svg';
+import imgTrash from '../img/trash.svg';
 
 function TodoItem(params) {
     const {text,

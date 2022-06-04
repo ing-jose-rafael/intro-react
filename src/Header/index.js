@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css'
-// import imgDevam from './img/devam.svg';
+// import imgDevam from '../img/devam.svg';
 
 const Header = ({total,completed})=>{
     const date = new Date();

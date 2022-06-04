@@ -1,7 +1,7 @@
 import React from 'react';
 import './NewTask.css';
-import imgPlus from './img/plus.svg'
-import imgLupa from './img/lupa.svg'
+// import imgPlus from '../img/plus.svg'
+import imgLupa from '../img/lupa.svg'
 
 const NewTask = ({searchValue,setSearchValue}) => {
 
