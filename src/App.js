@@ -22,7 +22,7 @@ function App() {
 
   const completed = todos.filter(todo => todo.completed).length;
   const totalTodo = todos.length;
-  const porcent = (completed*100)/totalTodo;
+  const porcent = parseFloat(((completed*100)/totalTodo).toFixed(2));
 
   const [searchValue,setSearchValue]=React.useState('');
 
@@ -42,7 +42,17 @@ function App() {
       todo.text === text
     );
     const newTodos = [...todos];
-    newTodos[todoIndex].completed=true;
+    newTodos[todoIndex].completed=!newTodos[todoIndex].completed;
+    setTodos(newTodos);
+  }
+
+  const deleteTodo= (text) => {
+    const todoIndex = todos.findIndex(todo => 
+      todo.text === text
+    );
+    const newTodos = [...todos];
+    // newTodos.pop(todoIndex);
+    newTodos.splice(todoIndex,1);
     setTodos(newTodos);
   }
 
@@ -67,6 +77,7 @@ function App() {
             text={todo.text}
             completed={todo.completed}
             onComplete={()=>{completeTodo(todo.text)}}
+            onDelete={()=>{deleteTodo(todo.text)}}
             />
         ))}
       </TodoList>}

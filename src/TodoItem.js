@@ -7,15 +7,16 @@ import imgTrash from './img/trash.svg';
 function TodoItem(params) {
     const {text,
         completed,
-        onComplete} = params;
+        onComplete,
+        onDelete} = params;
 
     // const onComplete = ()=>{
     //     alert('Ya completaste la tarea '+text);
     // }
     
-    const onDelete = ()=>{
-        alert('Borraste la tarea '+text);
-    }
+    // const onDelete = ()=>{
+    //     alert('Borraste la tarea '+text);
+    // }
 
     return (
         
