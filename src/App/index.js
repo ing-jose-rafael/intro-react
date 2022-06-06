@@ -18,43 +18,55 @@ import { AppUI } from "./AppUI";
 //   {text:'Cambiar Dico Duro', completed:false},
 //   {text:'Dormir', completed:true},
 // ]
-function App() {
+
+// encapsulando el metodo de guardar en localStore
+function useLocalStorage(itemName,inicialValueItem) {
   // creando variable que permite guardar en localStorege
-  const localStoregeTodos = localStorage.getItem('TODOS_V1');
-  let parsedTodos;
+  const localStoregeItems = localStorage.getItem(itemName);
+  let parsedItems;
 
   // valdando que exista la info en localStorage
-  if (!localStoregeTodos) {
-    localStorage.setItem('TODOS_V1',JSON.stringify([]));
-    parsedTodos = [];
+  if (!localStoregeItems) {
+    localStorage.setItem(itemName,JSON.stringify(inicialValueItem));
+    parsedItems = inicialValueItem;
   } else {
-    parsedTodos = JSON.parse(localStoregeTodos);
+    parsedItems = JSON.parse(localStoregeItems);
   }
 
-  const [todos, setTodos] = React.useState(parsedTodos)
+  const [item, setItems] = React.useState(parsedItems)
+
+  const seveItems = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem(itemName,stringifiedTodos);
+    setItems(newTodos);
+  }
+
+  return [item,seveItems];
+}
+
+function App() {
+
+  const [todos,seveTodos] = useLocalStorage('TODOS_V1',[]);
   const [searchValue,setSearchValue]=React.useState('');
 
   const completed = todos.filter(todo => todo.completed).length;
   const totalTodo = todos.length;
-  const porcent = parseFloat(((completed*100)/totalTodo).toFixed(2));
-
-
-  let searchTodo = todos;
-
+  let porcent = 0;
+  
+  
+  let searchTodo = [];
+  
   if (searchValue.length >= 1) {
     searchTodo = todos.filter(todo =>{
       const todoText = todo.text.toLowerCase();
       const searchText = searchValue.toLowerCase();
-
+      
       return todoText.includes(searchText);
     });
+  }else{
+    searchTodo = todos;
   }
-
-  const seveTodos = (newTodos) => {
-    const stringifiedTodos = JSON.stringify(newTodos);
-    localStorage.setItem('TODOS_V1',stringifiedTodos);
-    setTodos(newTodos);
-  }
+  porcent = parseFloat(((completed*100)/totalTodo).toFixed(2));
 
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => 
