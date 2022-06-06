@@ -86,6 +86,12 @@ function App() {
     newTodos.splice(todoIndex,1);
     seveTodos(newTodos);
   }
+  console.log('antes de useEffect');
+  React.useEffect(()=>{
+    console.log('useEffect ejecutado');
+  })
+  console.log('despues de useEffect');
+
 
   return (
     
