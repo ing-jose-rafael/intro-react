@@ -18,7 +18,7 @@ div.progress-container {
   }
   
   div.progress-container progress::-webkit-progress-value {
-    background-image: -webkit-linear-gradient(left, #7cfc81e3,#c477f4f3);
+    background-image: -webkit-linear-gradient(left, #c477f4f3,#c57cf2f3);
     border-radius: 100px;
     -webkit-transition: width 0.8s ease-in-out;
     transition: width 0.8s ease-in-out;

@@ -4,12 +4,13 @@
 import React from "react";
 // import { TodoCounter } from "./TodoCounter";
 // import { TodoSearch } from './TodoSearch';
-import { CreateTodoButton } from '../CreateTodoButton';
-import { TodoList } from '../TodoList';
-import { TodoItem } from '../TodoItem';
-import { Header } from "../Header";
-import { ProgressBar } from "../ProgressBar";
-import { NewTask } from "../NewTask";
+// import { CreateTodoButton } from '../CreateTodoButton';
+// import { TodoList } from '../TodoList';
+// import { TodoItem } from '../TodoItem';
+// import { Header } from "../Header";
+// import { ProgressBar } from "../ProgressBar";
+// import { NewTask } from "../NewTask";
+import { AppUI } from "./AppUI";
 
 const defaultTodos = [
   {text:'Cortar el cespe', completed:false},
@@ -58,33 +59,16 @@ function App() {
 
   return (
     
-    <React.Fragment>
-      {<Header total={totalTodo} completed={completed} />}
-      {<ProgressBar total={totalTodo} completed={completed} porcentaje={porcent}/>}
-      {<NewTask 
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-      />}
-      {/* {<TodoCounter/>} */}
-      
-      {/* {<TodoSearch/>} */}
-      
-      
-      {<TodoList>
-        {searchTodo.map(todo => (
-          <TodoItem 
-            key={todo.text} 
-            text={todo.text}
-            completed={todo.completed}
-            onComplete={()=>{completeTodo(todo.text)}}
-            onDelete={()=>{deleteTodo(todo.text)}}
-            />
-        ))}
-      </TodoList>}
-      
-      {<CreateTodoButton/>} 
-      
-    </React.Fragment>
+    <AppUI 
+      totalTodo = {totalTodo}
+      completed = {completed}
+      porcent ={porcent}
+      searchValue = {searchValue}
+      setSearchValue = {setSearchValue}
+      searchTodo = {searchTodo}
+      completeTodo = {completeTodo}
+      deleteTodo = {deleteTodo}
+    />
     
   );
 }
