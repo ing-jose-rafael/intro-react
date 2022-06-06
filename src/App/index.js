@@ -12,20 +12,32 @@ import React from "react";
 // import { NewTask } from "../NewTask";
 import { AppUI } from "./AppUI";
 
-const defaultTodos = [
-  {text:'Cortar el cespe', completed:false},
-  {text:'Bañar el bebe', completed:false},
-  {text:'Cambiar Dico Duro', completed:false},
-  {text:'Dormir', completed:true},
-]
+// const defaultTodos = [
+//   {text:'Cortar el cespe', completed:false},
+//   {text:'Bañar el bebe', completed:false},
+//   {text:'Cambiar Dico Duro', completed:false},
+//   {text:'Dormir', completed:true},
+// ]
 function App() {
-  const [todos, setTodos] = React.useState(defaultTodos)
+  // creando variable que permite guardar en localStorege
+  const localStoregeTodos = localStorage.getItem('TODOS_V1');
+  let parsedTodos;
+
+  // valdando que exista la info en localStorage
+  if (!localStoregeTodos) {
+    localStorage.setItem('TODOS_V1',JSON.stringify([]));
+    parsedTodos = [];
+  } else {
+    parsedTodos = JSON.parse(localStoregeTodos);
+  }
+
+  const [todos, setTodos] = React.useState(parsedTodos)
+  const [searchValue,setSearchValue]=React.useState('');
 
   const completed = todos.filter(todo => todo.completed).length;
   const totalTodo = todos.length;
   const porcent = parseFloat(((completed*100)/totalTodo).toFixed(2));
 
-  const [searchValue,setSearchValue]=React.useState('');
 
   let searchTodo = todos;
 
@@ -38,13 +50,19 @@ function App() {
     });
   }
 
+  const seveTodos = (newTodos) => {
+    const stringifiedTodos = JSON.stringify(newTodos);
+    localStorage.setItem('TODOS_V1',stringifiedTodos);
+    setTodos(newTodos);
+  }
+
   const completeTodo = (text) => {
     const todoIndex = todos.findIndex(todo => 
       todo.text === text
     );
     const newTodos = [...todos];
     newTodos[todoIndex].completed=!newTodos[todoIndex].completed;
-    setTodos(newTodos);
+    seveTodos(newTodos);
   }
 
   const deleteTodo= (text) => {
@@ -54,7 +72,7 @@ function App() {
     const newTodos = [...todos];
     // newTodos.pop(todoIndex);
     newTodos.splice(todoIndex,1);
-    setTodos(newTodos);
+    seveTodos(newTodos);
   }
 
   return (
