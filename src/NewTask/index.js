@@ -2,13 +2,14 @@ import React from 'react';
 import './NewTask.css';
 // import imgPlus from '../img/plus.svg'
 import imgLupa from '../img/lupa.svg'
+import { TodoContext } from '../TodoContext';
 
-const NewTask = ({searchValue,setSearchValue}) => {
-
+const NewTask = () => {
+  const {searchValue,setSearchValue} = React.useContext(TodoContext);
   // const [searchValue,setSearchValue]= React.useState('');
 
   const onSearchValueChange = (event) => {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     setSearchValue(event.target.value)
   }
   return (

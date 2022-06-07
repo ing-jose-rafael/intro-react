@@ -6,31 +6,35 @@ import { TodoItem } from '../TodoItem';
 import { Header } from "../Header";
 import { ProgressBar } from "../ProgressBar";
 import { NewTask } from "../NewTask";
-
-const AppUI = ({
-    totalTodo,
-    completed,
-    porcent,
-    searchValue,
-    setSearchValue,
-    searchTodo,
-    completeTodo,
-    deleteTodo,
-}) => {
+import { TodoContext } from "../TodoContext";
+// error,
+//     loading,
+//     totalTodo,
+//     completed,
+//     porcent,
+//     searchValue,
+//     setSearchValue,
+//     searchTodo,
+//     completeTodo,
+//     deleteTodo,
+const AppUI = () => {
+    const {
+        error,
+        loading,
+        searchTodo,
+        completeTodo,
+        deleteTodo 
+    } = React.useContext(TodoContext);
     return (
         <React.Fragment>
-            {<Header total={totalTodo} completed={completed} />}
-            {<ProgressBar total={totalTodo} completed={completed} porcentaje={porcent} />}
-            {<NewTask
-                searchValue={searchValue}
-                setSearchValue={setSearchValue}
-            />}
-            {/* {<TodoCounter/>} */}
-
-            {/* {<TodoSearch/>} */}
-
+            {<Header/>}
+            {<ProgressBar/>}
+            {<NewTask/>}
 
             {<TodoList>
+                {error && <p>Error! al cargar datos</p>}
+                {loading && <p>Estamos Cargando datos...</p>}
+                {(!loading && !searchTodo.length) && <p>!Agrega tu primera tareas!</p>}
                 {searchTodo.map(todo => (
                     <TodoItem
                         key={todo.text}

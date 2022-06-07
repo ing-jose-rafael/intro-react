@@ -1,10 +1,12 @@
 import React from 'react';
+import { TodoContext } from '../TodoContext';
 import './Header.css'
 // import imgDevam from '../img/devam.svg';
 
-const Header = ({total,completed})=>{
+const Header = ()=>{
     const date = new Date();
     const todaysDate = date.toDateString();
+    const {total} = React.useContext(TodoContext);
 
     return (
         <header>
