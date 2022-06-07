@@ -8,6 +8,7 @@
     cursor: pointer;
     font-size: 50px;
     position: fixed; /* no importa el scroll */
+    z-index: 1;
     bottom: 24px;
     right: 24px;
     font-weight: bold;

@@ -10,9 +10,9 @@ const ProgressBar = () => {
       <>
         <div className='progress-container'>
           {/* <progress value={`${(completedToDos/totalToDos)*100}`} max="100"></progress> */}
-          <progress value={porcent} max="100"></progress>
+          <progress value={porcent??0} max="100"></progress>
         </div>
-          { totalTodo > completed ? <p className="progress-number">{porcent}% completed</p> : 
+          { totalTodo > completed ? <p className="progress-number">{porcent??0}% completed</p> : 
           <p className='progress-default'>Start getting shit done!</p>}
       </>
     );

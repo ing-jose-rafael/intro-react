@@ -7,6 +7,7 @@ import { Header } from "../Header";
 import { ProgressBar } from "../ProgressBar";
 import { NewTask } from "../NewTask";
 import { TodoContext } from "../TodoContext";
+import { Modal } from "../Modal";
 // error,
 //     loading,
 //     totalTodo,
@@ -23,13 +24,16 @@ const AppUI = () => {
         loading,
         searchTodo,
         completeTodo,
-        deleteTodo 
+        deleteTodo,
+        openModal,
+        setOpenModal 
     } = React.useContext(TodoContext);
     return (
         <React.Fragment>
-            {<Header/>}
-            {<ProgressBar/>}
-            {<NewTask/>}
+            <Header/>
+            
+            {!loading && <ProgressBar/>}
+            <NewTask/>
 
             {<TodoList>
                 {error && <p>Error! al cargar datos</p>}
@@ -45,8 +49,9 @@ const AppUI = () => {
                     />
                 ))}
             </TodoList>}
-
-            {<CreateTodoButton />}
+            {openModal && (<Modal> <p>MOdal</p> </Modal>)}
+            
+            <CreateTodoButton setOpenModal={setOpenModal} openModal={openModal}/>
 
         </React.Fragment>
     );
