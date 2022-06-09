@@ -34,6 +34,12 @@ function TodoProvider(params) {
       }
       porcent = parseFloat(((completed*100)/totalTodo).toFixed(2));
     
+      const addTodo = (text) => {
+        const newTodo = {text, completed:false};
+        const newTodos = [...todos];
+        newTodos.push(newTodo);
+        seveTodos(newTodos);
+      }
       const completeTodo = (text) => {
         const todoIndex = todos.findIndex(todo => 
           todo.text === text
@@ -63,6 +69,7 @@ function TodoProvider(params) {
             searchValue,
             setSearchValue,
             searchTodo,
+            addTodo,
             completeTodo,
             deleteTodo,
             openModal,
