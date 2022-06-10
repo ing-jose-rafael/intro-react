@@ -6,7 +6,7 @@ import './Header.css'
 const Header = ()=>{
     const date = new Date();
     const todaysDate = date.toDateString();
-    const {total} = React.useContext(TodoContext);
+    const {totalTodo,completed} = React.useContext(TodoContext);
 
     return (
         <header>
@@ -17,7 +17,10 @@ const Header = ()=>{
                 {/* <p className="counter">
                   {totalToDos - completedToDos == 0 ? '😎' : `${totalToDos - completedToDos} tasks left`}
                 </p> */}
-                <p className="counter">{total} Artículos</p>
+                <p className="counter">
+                {totalTodo - completed === 0 ? '😎' : `${totalTodo - completed} pendiente`}
+                    {/* {(totalTodo-completed >0) && '${totalTodo-completed} faltan'} */}
+                </p>
             </div>
         </header>
     );

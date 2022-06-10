@@ -39,6 +39,7 @@ header {
   }
   
   header div.info-container p.counter {
+    margin-top: 10px;
     font-size: 2rem;
     font-weight: 700;
     color: #282828;

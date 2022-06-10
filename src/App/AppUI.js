@@ -41,7 +41,7 @@ const AppUI = () => {
             {/* <TodosLoading/> */}
             {<TodoList>
                 {error && <TodosError error={error}/>}
-                {loading && new Array(4).fill(1).map((item,index)=>(<TodosLoading/>))}
+                {loading && new Array(4).fill(1).map((item,index)=>(<TodosLoading key={index}/>))}
                 {(!loading && !searchTodo.length) && <EmptyTodos/>}
                 {searchTodo.map(todo => (
                     <TodoItem

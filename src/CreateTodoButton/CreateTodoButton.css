@@ -2,11 +2,11 @@
     /* background-color: #61DAFA; */
     background-color: #634bffe1;
     
-    /* box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5); */
+    box-shadow: 0px 5px 25px rgba(97, 100, 250, 0.5);
     border: none;
-    border-radius: 50%;
+    border-radius: 50px;
     cursor: pointer;
-    font-size: 40px;
+    font-size: 50px;
     position: fixed; /* no importa el scroll */
     z-index: 1;
     bottom: 24px;
@@ -16,8 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
+    height: 64px;
+    width: 64px;
   
     transform: rotate(0);
     transition: .3s ease;
