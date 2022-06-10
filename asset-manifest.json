@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/intro-react/static/css/main.72aaabc2.css",
-    "main.js": "/intro-react/static/js/main.bca072cf.js",
+    "main.css": "/intro-react/static/css/main.a2b3e6da.css",
+    "main.js": "/intro-react/static/js/main.fcc09b0d.js",
     "static/js/787.0a57351d.chunk.js": "/intro-react/static/js/787.0a57351d.chunk.js",
     "static/media/trash.svg": "/intro-react/static/media/trash.8e69dfd5441d1a34dd9cd483fa0acfb3.svg",
     "index.html": "/intro-react/index.html",
     "static/media/checked.svg": "/intro-react/static/media/checked.da8a24167e0383432f3d975171c9e053.svg",
     "static/media/lupa.svg": "/intro-react/static/media/lupa.0f1b8fd4c2da138f9fb5e6a99cdc6ba5.svg",
     "static/media/uncheck.svg": "/intro-react/static/media/uncheck.61458bd5bf2bcee8c61ace239b1b7bbe.svg",
-    "main.72aaabc2.css.map": "/intro-react/static/css/main.72aaabc2.css.map",
-    "main.bca072cf.js.map": "/intro-react/static/js/main.bca072cf.js.map",
+    "main.a2b3e6da.css.map": "/intro-react/static/css/main.a2b3e6da.css.map",
+    "main.fcc09b0d.js.map": "/intro-react/static/js/main.fcc09b0d.js.map",
     "787.0a57351d.chunk.js.map": "/intro-react/static/js/787.0a57351d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.72aaabc2.css",
-    "static/js/main.bca072cf.js"
+    "static/css/main.a2b3e6da.css",
+    "static/js/main.fcc09b0d.js"
   ]
 }
