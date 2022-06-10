@@ -9,6 +9,9 @@ import { NewTask } from "../NewTask";
 import { TodoContext } from "../TodoContext";
 import { Modal } from "../Modal";
 import { TodoForm } from "../TodoForm";
+import { TodosError } from "../TodosError";
+import { TodosLoading } from "../TodosLoading";
+import { EmptyTodos } from "../EmptyTodos";
 // error,
 //     loading,
 //     totalTodo,
@@ -35,11 +38,11 @@ const AppUI = () => {
             
             {!loading && <ProgressBar/>}
             <NewTask/>
-
+            {/* <TodosLoading/> */}
             {<TodoList>
-                {error && <p>Error! al cargar datos</p>}
-                {loading && <p>Estamos Cargando datos...</p>}
-                {(!loading && !searchTodo.length) && <p>!Agrega tu primera tareas!</p>}
+                {error && <TodosError error={error}/>}
+                {loading && new Array(4).fill(1).map((item,index)=>(<TodosLoading/>))}
+                {(!loading && !searchTodo.length) && <EmptyTodos/>}
                 {searchTodo.map(todo => (
                     <TodoItem
                         key={todo.text}
