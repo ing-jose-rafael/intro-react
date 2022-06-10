@@ -6,7 +6,7 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    font-size: 50px;
+    font-size: 40px;
     position: fixed; /* no importa el scroll */
     z-index: 1;
     bottom: 24px;
@@ -16,8 +16,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 64px;
-    width: 64px;
+    height: 50px;
+    width: 50px;
   
     transform: rotate(0);
     transition: .3s ease;

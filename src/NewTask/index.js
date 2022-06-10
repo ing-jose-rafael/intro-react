@@ -25,7 +25,7 @@ const NewTask = () => {
         name='addTask'
         className='add-input'
         type="text"
-        placeholder='Add a new task...' />
+        placeholder='Add a new product...' />
       <button type="submit" className='add-btn'><img src={imgLupa} alt="search" /></button>
         {/* <p>{searchValue}</p> */}
     </form>

@@ -11,7 +11,7 @@ header {
   
   header h2 {
     margin: 0;
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     color: #282828;
   }
   header span {
@@ -33,7 +33,7 @@ header {
   }
   
   header div.info-container p.date {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #282828c2;
     font-weight: 600;
   }
