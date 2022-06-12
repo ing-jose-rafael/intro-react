@@ -38,8 +38,8 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^4.0.0"
+    "gh-pages": "^4.0.0",
+    "jest-watch-typeahead": "^0.6.5"
   },
   "homepage": "https://ing-jose-rafael.github.io/intro-react"
-
 }
